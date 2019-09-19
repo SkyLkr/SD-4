@@ -1,9 +1,7 @@
 package app;
 
 import java.io.PrintStream;
-import java.net.HttpURLConnection;
 import java.net.Socket;
-import java.net.URL;
 import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
 
@@ -34,6 +32,8 @@ public class MiddlewareHandler implements Runnable {
                 System.out.println("Response: " + response);
                 out.println(response);
             }
+            
+            s.close();
         } catch(Exception e) {
             e.printStackTrace();
         }

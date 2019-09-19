@@ -3,14 +3,13 @@ package app;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
 
 public class MiddlewareServer {
     public static void main(String[] args) {
-        ServerSocket server;
+        
         try {
-            server = new ServerSocket(333);
-            System.out.println("Server is running at address " + server.getInetAddress() + " port " + server.getLocalPort());
+            ServerSocket server = new ServerSocket(333);
+            System.out.println("Server is running at address " + server.getInetAddress().getHostAddress() + " port " + server.getLocalPort());
 
             while(true) {
                 Socket client = server.accept();

@@ -17,7 +17,7 @@ public class TrabalhoSD_Tela2 extends AppCompatActivity {
 
     private Button Button_add, button_calcular;
     private EditText editTextNumeros;
-    private TextView editviewadd,Media,Mediana, Reulst_media,Result_mediana;
+    private TextView editviewadd, Result_media, Result_mediana;
     public String mandarproservidor;
 
     @Override
@@ -29,6 +29,9 @@ public class TrabalhoSD_Tela2 extends AppCompatActivity {
         Button_add = (Button) findViewById(R.id.button_add);
         editviewadd = (TextView) findViewById(R.id.textView);
         button_calcular = (Button) findViewById(R.id.button_calcular);
+
+        Result_mediana = (TextView) findViewById(R.id.Result_mediana);
+        Result_media = (TextView) findViewById(R.id.Result_media);
 
 
         Button_add.setOnClickListener(new View.OnClickListener() {
@@ -42,15 +45,19 @@ public class TrabalhoSD_Tela2 extends AppCompatActivity {
                     mandarproservidor = editTextNumeros.getText()+"";
                 }
                 editTextNumeros.setText("");
-
-
             }
         });
 
         button_calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), mandarproservidor, Toast.LENGTH_LONG).show();
+                String response = Connection.run(mandarproservidor, getApplicationContext());
+
+                String[] r = response.split(";");
+
+                Result_media.setText(r[0]);
+                Result_mediana.setText(r[1]);
+                //Toast.makeText(getApplicationContext(), mandarproservidor, Toast.LENGTH_LONG).show();
             }
         });
     }

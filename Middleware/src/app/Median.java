@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class Median implements Runnable {
     
-    private final String MEDIAN_IP = "http://localhost:8080/";
+    private final String MEDIAN_IP = "http://10.180.14.103:8080/";
 
     private CountDownLatch countDownLatch;
     private String message;

@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class Mean implements Runnable {
 
-    private final String MEAN_IP = "http://localhost:8080/";
+    private final String MEAN_IP = "http://10.180.84.141:8080/";
 
     private CountDownLatch countDownLatch;
     private String message;

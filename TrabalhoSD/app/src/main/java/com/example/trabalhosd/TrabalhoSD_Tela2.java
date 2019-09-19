@@ -55,8 +55,8 @@ public class TrabalhoSD_Tela2 extends AppCompatActivity {
 
                 String[] r = response.split(";");
 
-                Result_media.setText(r[0]);
-                Result_mediana.setText(r[1]);
+                Result_media.setText(String.format("%.2f", Double.parseDouble(r[0])));
+                Result_mediana.setText(String.format("%.2f", Double.parseDouble(r[1])));
                 //Toast.makeText(getApplicationContext(), mandarproservidor, Toast.LENGTH_LONG).show();
             }
         });

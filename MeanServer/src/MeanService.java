@@ -6,20 +6,20 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.PathSegment;
 
-@Path("/mean")
+@Path("/")
 public class MeanService {
 	
-	@Path("{values}")
+	@Path("{values:calculate}")
 	@GET
 	@Produces("application/json")
 	public String getMean(@PathParam("values") PathSegment pathSegment) {
-		float result = 0;
+		double result = 0;
 		
 		MultivaluedMap<String, String> m = pathSegment.getMatrixParameters();
 		for (Entry<String, List<String>> entry: m.entrySet()) {
-			result += Float.parseFloat(entry.getKey());
+			result += Double.parseDouble(entry.getKey());
 		}
 		
-		return Float.toString(result / m.size());
+		return Double.toString(result / m.size());
 	}
 }

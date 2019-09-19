@@ -15,6 +15,7 @@ public class MiddlewareServer {
             while(true) {
                 Socket client = server.accept();
 
+                System.out.println("Client " + client.getInetAddress() + " connected.");
                 
                 MiddlewareHandler handler = new MiddlewareHandler(client);
 

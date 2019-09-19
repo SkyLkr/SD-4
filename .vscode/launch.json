@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MiddlewareServer",
+            "request": "launch",
+            "mainClass": "app.MiddlewareServer"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ClientTest",
+            "request": "launch",
+            "mainClass": "app.ClientTest"
+        }
+    ]
+}
